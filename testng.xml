@@ -5,8 +5,7 @@
 		<classes>
 			<class name="com.damon.cases.BrowserTest">
 			</class>
-   			 <parameter name="browser" value="firefox"></parameter>
-   			 <parameter name="url" value="http://www.baidu.com"></parameter>
+
    		</classes>
 	</test>
 	<!-- 

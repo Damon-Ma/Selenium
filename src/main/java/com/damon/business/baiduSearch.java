@@ -1,8 +1,8 @@
-package com.damon.tasks;
+package com.damon.business;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
+import com.damon.base.ReadConfig;
+import com.damon.handle.HomePageHandle;
+import com.damon.page.HomePage;
 import com.damon.util.ReadProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,11 +17,11 @@ public class baiduSearch {
 	}
 
 	public static void search(WebDriver dr,String s1){
-		dr.findElement(By.xpath(ReadProperties.getprop("element\\element", "baiducontent"))).clear();
 		try {
+            HomePageHandle.searchBoxClear(dr);
 			sleep(2000);
-		dr.findElement(By.xpath(ReadProperties.getprop("element\\element", "baiducontent"))).sendKeys(s1);
-		dr.findElement(By.xpath(ReadProperties.getprop("element\\element", "baidusearch"))).click();
+			HomePageHandle.searchBoxSendKey(dr,s1);
+            HomePageHandle.searchBtClick(dr);
 			sleep(2000);
 
 		} catch (InterruptedException e) {

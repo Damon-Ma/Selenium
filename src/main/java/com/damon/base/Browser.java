@@ -1,13 +1,16 @@
-package com.damon.util;
+package com.damon.base;
 
+import com.damon.util.TestLog;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Browser {
 
-	public static WebDriver openBrowser(WebDriver dr,String browser,String url){
-		if (browser.equals("chrome")){
+	public static WebDriver openBrowser(WebDriver dr){
+		String browser = ReadConfig.getBrowser();
+		TestLog.logger.info("测试浏览器："+browser);
+        if (browser.equals("chrome")){
 			System.setProperty("webdriver.chrome.driver", "d:\\chromedriver.exe");
 			dr= new ChromeDriver();
 		} else if (browser.equals("firefox")){
@@ -17,9 +20,7 @@ public class Browser {
 		} else if (browser.equals("ie")){
 		} else{
 		}
-
 		dr.manage().window().maximize();
-		dr.get(url);
 		return dr;
 	}
 	
