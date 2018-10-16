@@ -24,22 +24,27 @@ public class RangeDatabyPOI {
 		
 		
 		File file = new File(filePath);
-		FileInputStream inputStream = null;
+		FileInputStream inputStream;
 		try {
 			inputStream = new FileInputStream(file);
 		Workbook workbook = null;
 		String extensionName = filePath.substring(filePath.indexOf("."));
-		if (extensionName.equals(".xls")){
-			workbook= new HSSFWorkbook(inputStream);
-		}else if (extensionName.equals(".xlsx")){
-			workbook= new XSSFWorkbook(inputStream);
-		}else{
-			System.out.println("文件格式不正确");
-		}
+			switch (extensionName) {
+				case ".xls":
+					workbook = new HSSFWorkbook(inputStream);
+					break;
+				case ".xlsx":
+					workbook = new XSSFWorkbook(inputStream);
+					break;
+				default:
+					System.out.println("文件格式不正确");
+					break;
+			}
 
-		Sheet sheet = workbook.getSheetAt(0);
+			assert workbook != null;
+			Sheet sheet = workbook.getSheetAt(0);
 		int rowCount=sheet.getLastRowNum()-sheet.getFirstRowNum();
-		List<Object[]> records =new ArrayList <Object[]>();
+		List<Object[]> records = new ArrayList<>();
 		
     	for(int i=1;i<rowCount+1;i++){
     		//跳过表头从第二行开始获取

@@ -1,19 +1,19 @@
 package com.damon.handle;
 
 import com.damon.base.BaseDriver;
-import com.damon.page.HomePage;
+import com.damon.page.NewsPage;
 
-public class HomePageHandle {
+public class NewsPageHandle {
     //清空
     public static void searchBoxClear(BaseDriver driver){
-        HomePage.searchBoxElement(driver).clear();
+        NewsPage.searchBoxElement(driver).clear();
     }
     //输入
     public static void searchBoxSendKey(BaseDriver driver,String s1){
-        HomePage.searchBoxElement(driver).sendKeys(s1);
+        NewsPage.searchBoxElement(driver).sendKeys(s1);
     }
     //点击搜索
     public static void searchBtClick(BaseDriver driver){
-        HomePage.searchBtElement(driver).click();
+        NewsPage.searchBtElement(driver).click();
     }
 }

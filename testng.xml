@@ -3,14 +3,14 @@
 <suite name="Maven_Test" parallel="tests" thread-count="1">
 	<test name="browsertest">
 		<classes>
-			<class name="com.damon.cases.BrowserTest">
-			</class>
-
+			<class name="com.damon.cases.BaseCase"/>
+			<class name="com.damon.cases.BrowserTest"/>
+			<class name="com.damon.cases.NewsSearchTest"/>
    		</classes>
 	</test>
-	<!-- 
+
 	<listeners>
-		<listener class-name="extentx.ExtentTestNGITestListener"></listener>
+		<listener class-name="com.damon.util.ExtentTestNGIReporterListener"/>
+		<listener class-name="com.damon.util.TakeScreenshotListener"/>
 	</listeners>
-	 -->
 </suite>

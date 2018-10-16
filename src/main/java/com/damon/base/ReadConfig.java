@@ -1,9 +1,7 @@
 package com.damon.base;
 
 import com.damon.util.ReadProperties;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.damon.util.TestLog;
 
 public class ReadConfig {
 
@@ -11,23 +9,23 @@ public class ReadConfig {
      * 获取选择的浏览器
      * @return 浏览器名称
      */
-    public static String getBrowser(){
-        return ReadProperties.getprop("browser").getString("browserName");
+    static String getBrowser(){
+        return ReadProperties.getprop("config").getString("browserName");
     }
 
     /**
      * 获取测试url
      */
-    public static String getUrl(String urlName){
-        return ReadProperties.getprop("url").getString(urlName);
+    static String getUrl(String urlName){
+        String url =  ReadProperties.getprop("config").getString(urlName);
+        TestLog.logger.info("测试URL："+url);
+        return url;
     }
 
-    /**
-     * 获取主页element
+    /**·
+     * 获取element文件
      */
-    public static WebElement getHomeElement(WebDriver dr, String elementName){
-        String element =  ReadProperties.getprop("element/home").getString(elementName);
-        return dr.findElement(By.xpath(element));
+    static String getElement(String elementName){
+        return ReadProperties.getprop("element/element").getString(elementName);
     }
-
 }
