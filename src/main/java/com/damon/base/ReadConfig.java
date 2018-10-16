@@ -14,12 +14,11 @@ public class ReadConfig {
     }
 
     /**
-     * 获取测试url
+     * 获取config
      */
-    static String getUrl(String urlName){
-        String url =  ReadProperties.getprop("config").getString(urlName);
-        TestLog.logger.info("测试URL："+url);
-        return url;
+    static String getConfig(String configName){
+        String configValue =  ReadProperties.getprop("config").getString(configName);
+        return configValue;
     }
 
     /**·

@@ -20,16 +20,20 @@ public class BaseDriver{
 
         switch (browser) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "d:\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", ReadConfig.getConfig(browser));
                 driver = new ChromeDriver();
                 break;
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "d:\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", ReadConfig.getConfig(browser));
                 driver = new FirefoxDriver();
                 break;
             case "edge":
+                System.setProperty("webdriver.edge.driver", ReadConfig.getConfig(browser));
+                driver = new FirefoxDriver();
                 break;
             case "ie":
+                System.setProperty("webdriver.ie.driver", ReadConfig.getConfig(browser));
+                driver = new FirefoxDriver();
                 break;
             default:
                 break;
@@ -53,7 +57,9 @@ public class BaseDriver{
 
     //get方法
     public void get(String urlName){
-        driver.get(ReadConfig.getUrl(urlName));
+        String url = ReadConfig.getConfig(urlName);
+        driver.get(url);
+        TestLog.logger.info("测试URL："+url);
     }
 
     //findElement By Xpath
