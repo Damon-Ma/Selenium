@@ -1,7 +1,6 @@
 package com.damon.util;
 
-import com.damon.base.BaseDriver;
-import com.damon.cases.BaseCase;
+import com.damon.testcases.BaseCase;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;

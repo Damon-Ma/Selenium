@@ -1,4 +1,4 @@
-package com.damon.cases;
+package com.damon.testcases;
 
 import com.damon.base.BaseDriver;
 import com.damon.business.NewsSearch;
@@ -19,6 +19,5 @@ public class NewsSearchTest {
     @Test
     public void newsTest(){
         NewsSearch.searchNews(driver,"美国");
-        Assert.assertEquals(1,2);
     }
 }

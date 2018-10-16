@@ -1,4 +1,4 @@
-package com.damon.cases;
+package com.damon.testcases;
 
 import com.damon.base.BaseDriver;
 import org.testng.annotations.AfterTest;

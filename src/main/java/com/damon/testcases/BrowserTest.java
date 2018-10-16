@@ -1,7 +1,6 @@
-package com.damon.cases;
+package com.damon.testcases;
 
 import com.damon.base.BaseDriver;
-import com.damon.base.ReadConfig;
 import com.damon.business.BaiduSearch;
 import com.damon.util.RangeDatabyPOI;
 import com.damon.util.TestLog;

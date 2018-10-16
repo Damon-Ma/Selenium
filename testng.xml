@@ -3,9 +3,9 @@
 <suite name="Maven_Test" parallel="tests" thread-count="1">
 	<test name="browsertest">
 		<classes>
-			<class name="com.damon.cases.BaseCase"/>
-			<class name="com.damon.cases.BrowserTest"/>
-			<class name="com.damon.cases.NewsSearchTest"/>
+			<class name="com.damon.testcases.BaseCase"/>
+			<class name="com.damon.testcases.BrowserTest"/>
+			<class name="com.damon.testcases.NewsSearchTest"/>
    		</classes>
 	</test>
 
