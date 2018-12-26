@@ -4,8 +4,6 @@
 	<test name="browsertest">
 		<classes>
 			<class name="com.damon.testcases.BaseCase"/>
-			<class name="com.damon.testcases.BrowserTest"/>
-			<class name="com.damon.testcases.NewsSearchTest"/>
    		</classes>
 	</test>
 
